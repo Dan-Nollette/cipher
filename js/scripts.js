@@ -30,10 +30,24 @@ var combine = function(sentence) {
   return sentence + shorten(sentence);
 };
 
+var midpoint = function(sentence) {
+  var midpoint =  (sentence.length - sentence.length % 2) /2;
+  var midLetter = sentence.charAt(midpoint);
+  return reverse(midLetter + combine(sentence));
+};
+
+var reverse = function(sentence) {
+  return sentence.split('').reverse().join('');
+}
+
 // alert(capitalize(sentence));
 //
 // // alert(swap(sentence));
 
 // alert(shorten(sentence));
+//
+// alert(combine(sentence));
 
-alert(combine(sentence));
+// alert(midpoint(sentence));
+
+alert(midpoint(sentence));
